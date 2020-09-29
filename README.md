@@ -1,10 +1,8 @@
 # Currently a WIP
 
-Just creating the repo for now while work starts.
+Currently all I have written is a scraper for pokellector.
 
-### Description
-
-Poke Card API will be a RESTful API for pokemon cards. It will contain images, card/set info, etc.
+My plan is to use that data as a base in hopes to use that data as a base to create a RESTful API for Pokémon cards. It will contain images, card/set info, etc.
 
 ### Built with
 
@@ -12,10 +10,7 @@ Poke Card API will be a RESTful API for pokemon cards. It will contain images, c
 - Fastify
 - Typescript
 - PostgreSQL
-
-### Crawled and Scraped with
-
-- Scrapy
+- JSDOM
 
 ### Please no sue
 
