@@ -1,10 +1,10 @@
 # Currently a WIP
 
-Currently all I have written is a scraper for pokellector.
+At the moment all that's written is a crawler for [pokellector](http://pokecollector.com).
 
-My plan is to use that data as a base in hopes to use that data as a base to create a RESTful API for Pokémon cards. It will contain images, card/set info, etc.
+My plan is to use that data as a base in hopes to create a RESTful API for Pokémon cards. It will contain images, card/set info, etc.
 
-### Built with
+### Being Built With
 
 - Node
 - Fastify
@@ -12,6 +12,6 @@ My plan is to use that data as a base in hopes to use that data as a base to cre
 - PostgreSQL
 - JSDOM
 
-### Please no sue
+### Please No Sue T_T
 
-Poke Card API is not affiliated with, sponsored or endorsed by, or in any way associated with Pokemon or The Pokemon Company International Inc.
+This project is not affiliated with, sponsored or endorsed by, or in any way associated with Pokecollector, Pokemon, or The Pokemon Company International Inc.
