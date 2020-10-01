@@ -4,7 +4,7 @@
 
 Turns out that a Pokémon card API already [exists](https://github.com/PokemonTCG). Nonetheless, I will still use this repo to create my own version of a Pokémon card API and make the SQLite DB available for download. It will crawl the [Official Pokémon TCG DB](https://www.pokemon.com/us/pokemon-tcg/pokemon-cards/)
 
-At the moment all that's written is a crawler for [pokellector](http://pokecollector.com), but aforementioned that will be changed to the official TCG DB.
+At the moment all that's written is a crawler for Pokémon type cards. Will be working on the card types soon.
 
 ### Being Built With
 
