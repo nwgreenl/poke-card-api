@@ -1,4 +1,4 @@
 import getCardsInfo from './src/getCardInfo';
-import { BASE_URL, LIMIT } from './settings';
+import { BASE_URL, PAGE_LIMIT } from './settings';
 
-getCardsInfo(BASE_URL, LIMIT);
+getCardsInfo(BASE_URL, PAGE_LIMIT);

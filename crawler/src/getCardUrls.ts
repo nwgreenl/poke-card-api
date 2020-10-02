@@ -10,28 +10,26 @@ const getAllCardsFromPage = async (dom: JSDOM): Promise<Array<string>> => {
   return cardUrls;
 };
 
-export default async function getCardsUrls(url: string, limit: number): Promise<Array<string>> {
+export default async function getCardsUrls(url: string, pageLimit: number): Promise<Array<string>> {
   const dom = await JSDOM.fromURL(url);
   const { document } = dom.window;
 
-  let allCardUrls: any = await getAllCardsFromPage(dom);
+  let allCardUrls: Array<string> = await getAllCardsFromPage(dom);
 
   let nextPageBtn = document.querySelector('#cards-load-more').children[0].children[2];
 
   let i = 0;
 
-  while (nextPageBtn.className !== 'disabled' && (!limit || (limit && i <= limit))) {
+  while (nextPageBtn.className !== 'disabled' && (!pageLimit || (pageLimit && i++ <= pageLimit))) {
     const nextPageUrl = nextPageBtn.href;
     const nextPageDom = await JSDOM.fromURL(nextPageUrl);
     nextPageBtn = nextPageDom.window.document.querySelector('#cards-load-more').children[0]
       .children[2];
 
-    const nextCardUrls = await getAllCardsFromPage(nextPageDom);
+    const nextCardUrls: Array<string> = await getAllCardsFromPage(nextPageDom);
 
-    allCardUrls.push(nextCardUrls);
-
-    i++;
+    allCardUrls.push(...nextCardUrls);
   }
 
-  return allCardUrls.flat();
+  return allCardUrls;
 }

@@ -6,6 +6,11 @@ export interface attackInfoType {
   text: string;
 }
 
+export interface weaknessInfoType {
+  type: string;
+  value: string;
+}
+
 export interface resistanceInfoType {
   // TO DO
 }
