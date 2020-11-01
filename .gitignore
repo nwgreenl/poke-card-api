@@ -1,2 +1,2 @@
-api/node_modules
 crawler/node_modules
+crawler/.env
