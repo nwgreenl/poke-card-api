@@ -1,13 +1,7 @@
 import { JSDOM } from 'jsdom';
-import { stringify } from 'querystring';
-import { attackInfoType, weaknessInfoType } from './types';
+import { basicInfoType, pokemonInfoType, resistanceInfoType, weaknessInfoType } from './types';
 
-// TO DO
-// BEFORE TRAINER OR ENERGY TYPE, GET WHAT EXISTS WORKING THEN COMMIT
-// trainer type
-// energy type
-
-export const getBasicInfo = (dom: JSDOM) => {
+export const getBasicInfo = (dom: JSDOM): basicInfoType => {
   const { document } = dom.window;
 
   const name = document.querySelector('.card-description').children[0].textContent.trim();
@@ -17,7 +11,15 @@ export const getBasicInfo = (dom: JSDOM) => {
   return { name, image, artist };
 };
 
-export const getPokemonInfo = (dom: JSDOM) => {
+export const getTrainerInfo = (dom: JSDOM) => {
+  // TODO
+}
+
+export const getEnergyInfo = (dom: JSDOM) => {
+  // TODO
+}
+
+export const getPokemonInfo = (dom: JSDOM): pokemonInfoType => {
   const { document } = dom.window;
 
   let cardInfo = {};
@@ -98,7 +100,7 @@ export const getPokemonInfo = (dom: JSDOM) => {
       cardInfo = { ...cardInfo, weaknesses };
     } else if (statDiv.textContent.includes('Resistance') && statDiv.children.length > 1) {
       const resistanceLists = [...statDiv.children[1].children];
-      const resistances = resistanceLists.map(
+      const resistances: Array<resistanceInfoType> = resistanceLists.map(
         (resistance: { title: string; textContent: string }) => ({
           type: resistance.title,
           value: resistance.textContent.trim(),
@@ -150,5 +152,5 @@ export const getPokemonInfo = (dom: JSDOM) => {
     attacks,
   };
 
-  return cardInfo;
+  return <pokemonInfoType>cardInfo;
 };
