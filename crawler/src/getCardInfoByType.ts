@@ -47,9 +47,9 @@ export const getPokemonInfo = (dom: JSDOM): pokemonInfoType => {
     ? statsFooterDiv.textContent.trim().split('\n')[1].trim()
     : statsFooterDiv.textContent.match(/\d+\/\d+/)[0];
   const rarity = isPromo ? 'Promo' : statsFooterDiv.textContent.match(/\d+\/\d+\s(\w+)/)[1];
-  const hp = document.querySelector('.card-hp').textContent.trim().substr(2);
+  const hp = parseInt(document.querySelector('.card-hp').textContent.trim().substr(2));
   const setId = urlPath[1];
-  const number = urlPath[2];
+  const number = parseInt(urlPath[2]);
   const id = `${setId}-${number}`;
   let abilities = [];
   let attacks = [];

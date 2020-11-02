@@ -14,15 +14,15 @@ export interface pokemonInfoType extends basicInfoType {
   retreatTypes: Array<string>;
   retreatInfo: Array<any>;
   retreatCost: number;
+  hp: number;
+  number: number;
   id: string;
-  hp: string;
   superType: string;
   subType: string;
   seriesId: string;
   setName: string;
   setId: string;
   setNumber: string;
-  number: string;
   rarity: string;
 };
 
