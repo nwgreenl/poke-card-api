@@ -2,15 +2,14 @@
 
 ~~My plan is to use that data as a base in hopes to create a RESTful API for Pokémon cards. It will contain images, card/set info, etc.~~
 
-Turns out that a Pokémon card API already [exists](https://github.com/PokemonTCG). Nonetheless, I will still use this repo to create my own version of a Pokémon card API and make the SQLite DB available for download. It will crawl the [Official Pokémon TCG DB](https://www.pokemon.com/us/pokemon-tcg/pokemon-cards/)
+Turns out that a Pokémon card API already [exists](https://github.com/PokemonTCG). Nonetheless, I will still use this repo to create a SQLite DB along with some fun analysis. It will scrape the [Official Pokémon TCG DB](https://www.pokemon.com/us/pokemon-tcg/pokemon-cards/)
 
-At the moment all that's written is a crawler for [pokellector](http://pokecollector.com), but aforementioned that will be changed to the official TCG DB.
+At the moment all that's written is a scraper for Pokémon type cards. Will be working on trainer and energy card types soon. Will also be cleaning up all the tech debt things 😅
 
 ### Being Built With
 
 - Node
 - Typescript
-- Fastify
 - JSDOM
 - SQLite
 
