@@ -1,0 +1,41 @@
+DROP TABLE IF EXISTS pokemon;
+
+DROP TABLE IF EXISTS sets;
+
+DROP TABLE IF EXISTS series;
+
+CREATE TABLE series (series_id STRING PRIMARY KEY);
+
+CREATE TABLE sets (
+  set_id STRING PRIMARY KEY,
+  set_name STRING DEFAULT NULL,
+  series_id STRING DEFAULT NULL,
+  FOREIGN KEY (series_id) REFERENCES series (series_id)
+);
+
+CREATE TABLE pokemon (
+  id STRING PRIMARY KEY,
+  name STRING DEFAULT NULL,
+  image STRING DEFAULT NULL,
+  artist STRING DEFAULT NULL,
+  weaknesses STRING DEFAULT NULL,
+  attacks STRING DEFAULT NULL,
+  resistances STRING DEFAULT NULL,
+  abilities STRING DEFAULT NULL,
+  type STRING DEFAULT NULL,
+  evolves_from STRING DEFAULT NULL,
+  retreat_types STRING DEFAULT NULL,
+  retreat_info STRING DEFAULT NULL,
+  retreat_cost STRING DEFAULT NULL,
+  hp STRING DEFAULT NULL,
+  super_type STRING DEFAULT NULL,
+  sub_type STRING DEFAULT NULL,
+  series_id STRING DEFAULT NULL,
+  set_number STRING DEFAULT NULL,
+  number STRING DEFAULT NULL,
+  rarity STRING DEFAULT NULL,
+  set_name STRING DEFAULT NULL,
+  set_id STRING DEFAULT NULL,
+  FOREIGN KEY (set_name) REFERENCES sets (set_name),
+  FOREIGN KEY (set_id) REFERENCES sets (set_id)
+);
