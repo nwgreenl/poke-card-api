@@ -9,10 +9,10 @@ export interface pokemonInfoType extends basicInfoType {
   attacks?: Array<attackInfoType>;
   resistances?: Array<resistanceInfoType>;
   abilities?: Array<abilityInfoType>;
-  type: Array<string>;
   evolvesFrom: Array<string>;
   retreatTypes: Array<string>;
   retreatInfo: Array<any>;
+  type: string;
   retreatCost: number;
   hp: number;
   number: number;
