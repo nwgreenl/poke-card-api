@@ -134,6 +134,8 @@ export const getPokemonInfo = (dom: JSDOM): pokemonInfoType => {
     ? [typeIcon.className.match(/icon-(\w+)/)[1]]
     : [...new Set(attacks.map((attack) => attack.costTypes))];
 
+  if(abilities.length) cardInfo = {...cardInfo, abilities}
+
   cardInfo = {
     ...cardInfo,
     id,
@@ -148,7 +150,6 @@ export const getPokemonInfo = (dom: JSDOM): pokemonInfoType => {
     setNumber,
     number,
     rarity,
-    abilities,
     attacks,
   };
 
