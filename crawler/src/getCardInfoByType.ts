@@ -37,7 +37,7 @@ export const getPokemonInfo = (dom: JSDOM): pokemonInfoType => {
   const subType = cardTypeDiv.children[0].textContent.replace('Pokémon', '').trim();
   const evolvesFrom = cardTypeDiv.children[1]
     ? cardTypeDiv.children[1].children[0].textContent.trim()
-    : ['base'];
+    : 'base'
   const isPromo = statsFooterDiv.textContent.match(/(.+)—/);
   const seriesId = isPromo
     ? statsFooterDiv.textContent.match(/(.+)—/)[1].trim()
