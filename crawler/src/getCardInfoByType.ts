@@ -39,10 +39,10 @@ export const getPokemonInfo = (dom: JSDOM): pokemonInfoType => {
     ? cardTypeDiv.children[1].children[0].textContent.trim()
     : ['base'];
   const isPromo = statsFooterDiv.textContent.match(/(.+)—/);
-  const series = isPromo
+  const seriesId = isPromo
     ? statsFooterDiv.textContent.match(/(.+)—/)[1].trim()
     : statsFooterDiv.textContent.trim().split('\n')[0];
-  const setName = isPromo ? statsFooterDiv.textContent.match(/—(.+)/)[1].trim() : series;
+  const setName = isPromo ? statsFooterDiv.textContent.match(/—(.+)/)[1].trim() : seriesId;
   const setNumber = isPromo
     ? statsFooterDiv.textContent.trim().split('\n')[1].trim()
     : statsFooterDiv.textContent.match(/\d+\/\d+/)[0];
@@ -105,7 +105,7 @@ export const getPokemonInfo = (dom: JSDOM): pokemonInfoType => {
           type: resistance.title,
           value: resistance.textContent.trim(),
         })
-      );
+      )
 
       cardInfo = { ...cardInfo, resistances };
     } else if (statDiv.textContent.includes('Retreat')) {
@@ -142,7 +142,7 @@ export const getPokemonInfo = (dom: JSDOM): pokemonInfoType => {
     type,
     evolvesFrom,
     hp,
-    series,
+    seriesId,
     setName,
     setId,
     setNumber,

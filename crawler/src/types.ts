@@ -18,7 +18,7 @@ export interface pokemonInfoType extends basicInfoType {
   hp: string;
   superType: string;
   subType: string;
-  series: string;
+  seriesId: string;
   setName: string;
   setId: string;
   setNumber: string;

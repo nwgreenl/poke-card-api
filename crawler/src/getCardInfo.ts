@@ -20,6 +20,6 @@ export default async function getCardsInfo(url: string, pageLimit: number) {
   const cardUrls = await getCardsUrls(url, pageLimit);
   const cardsInfo = await Promise.all(cardUrls.map((cardUrl) => getCardInfo(cardUrl)));
 
-  console.log(cardsInfo);
-  // return cardsInfo
+  // console.log(cardsInfo);
+  return cardsInfo
 }
